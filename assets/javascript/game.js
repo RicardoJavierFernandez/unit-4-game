@@ -13,25 +13,26 @@ var score = 0;
 var wins = 0;
 var losses = 0;
 
-// Set random numbers to the value attribute of each image
-$('#red').attr('value', randomNumber(12, 19));
-$('#blue').attr('value', randomNumber(12, 19));
-$('#yellow').attr('value', randomNumber(12, 19));
-$('#green').attr('value', randomNumber(12, 19));
-
-// Store the value of each 
-var redValue = $('#red').attr('value');
-var blueValue = $('#blue').attr('value');
-var yellowValue = $('#yellow').attr('value');
-var greenValue = $('#green').attr('value');
-// console.log(redValue, blueValue, yellowValue, greenValue);
-
 function reset(){
+    // Set random numbers to the value attribute of each image
+    $('#red').attr('value', randomNumber(12, 19));
+    $('#blue').attr('value', randomNumber(12, 19));
+    $('#yellow').attr('value', randomNumber(12, 19));
+    $('#green').attr('value', randomNumber(12, 19));
+
+    // Store the value of each 
+    var redValue = $('#red').attr('value');
+    var blueValue = $('#blue').attr('value');
+    var yellowValue = $('#yellow').attr('value');
+    var greenValue = $('#green').attr('value');
+
     score = 0;
     numberTarget = randomNumber(19, 120);
     $('#score-number').html(score);
     $('#random-num').html(numberTarget);
 }
+
+reset();
 
 
 $('.crystal-img').on('click', function(event)
