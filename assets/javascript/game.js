@@ -1,5 +1,4 @@
-// generate random numbers to be used for the target score
-// and points for each crystal
+// Generate random numbers to be used for the target score and points for each crystal
 function randomNumber(minNumber, maxNumber){
     var number = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
     return number;
@@ -7,9 +6,9 @@ function randomNumber(minNumber, maxNumber){
 
 // Set random numbers to numberScore and each crystalScore
 var numberTarget= randomNumber(19, 120);
-$('#random-num').text(numberTarget);
+$('#random-num').html(numberTarget);
 
-// Set score of the game to 0
+// Set score, wins and losses to 0
 var score = 0;
 var wins = 0;
 var losses = 0;
@@ -27,25 +26,38 @@ var yellowValue = $('#yellow').attr('value');
 var greenValue = $('#green').attr('value');
 // console.log(redValue, blueValue, yellowValue, greenValue);
 
+function reset(){
+    score = 0;
+    numberTarget = randomNumber(19, 120);
+    $('#score-number').html(score);
+    $('#random-num').html(numberTarget);
+}
+
 
 $('.crystal-img').on('click', function(event)
     {
         crystalClicked = event.target;
         crystalValue = crystalClicked.getAttribute('value');
-        score += crystalValue
-        if (score === numberTarget) {
+        score += Number(crystalValue)
+        $('#score-number').html(Number(score));
+        if (score === numberTarget) 
+        {
             wins += 1;
-            alert("YOU WIN!!!");
-            ('#wins').html(wins);
+            alert("YOU WIN!!! Your score matched the random number of " + numberTarget);
+            $('#wins').html(Number(wins));
+            reset();
         }
-        else if (score < numberTarget) {
+        else if (score < numberTarget) 
+        {
             $('#score-number').html(Number(score));
         }
-        else {
+        else 
+        {
             losses += 1;
-            alert("GAME OVER");
-            location.reload();
+            $('#losses').html(Number(losses));
+            alert("YOU LOSE! Your total score was " + score + " which is greater than " + numberTarget);
+            reset();  
         }
-        $('#score-number').html(Number(score));
     });
+
 
