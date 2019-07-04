@@ -79,7 +79,6 @@ body {
     font-size: 35px;
     text-align: center;
     width: 30%;
-    padding: 35px;
     padding-top: 60px;
     color: #FAF0CA;
 }
@@ -90,7 +89,8 @@ body {
     font-size: 22px;
     color: #FAF0CA;
     width: 30%;
-    padding: 15px;
+    padding-top: 60px;
+    text-align: center;
 }
 
 #score-text, #score-number{
