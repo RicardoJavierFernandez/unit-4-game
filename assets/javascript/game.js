@@ -20,12 +20,6 @@ function reset(){
     $('#yellow').attr('value', randomNumber(12, 19));
     $('#green').attr('value', randomNumber(12, 19));
 
-    // Store the value of each 
-    var redValue = $('#red').attr('value');
-    var blueValue = $('#blue').attr('value');
-    var yellowValue = $('#yellow').attr('value');
-    var greenValue = $('#green').attr('value');
-
     score = 0;
     numberTarget = randomNumber(19, 120);
     $('#score-number').html(score);
