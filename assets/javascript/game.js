@@ -1,12 +1,11 @@
-// Generate random numbers to be used for the target score and points for each crystal
+// Create a function that will generate random numbers within a range, to be used for the target score and points for each crystal
 function randomNumber(minNumber, maxNumber){
     var number = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
     return number;
 }
 
-// Set random numbers to numberScore and each crystalScore
-var numberTarget= randomNumber(19, 120);
-$('#random-num').html(numberTarget);
+// Declare numberTarget variable
+var numberTarget;
 
 // Set score, wins and losses to 0
 var score = 0;
